@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "028a8df0-5713-11e8-b2c4-49257da705aa",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Realtime Tweets",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":6,\"y\":2,\"w\":6,\"h\":4,\"i\":\"1\"},\"id\":\"5ddc3130-3fcc-11e8-8785-5305da020e76\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":0,\"y\":6,\"w\":12,\"h\":4,\"i\":\"4\"},\"id\":\"be01d2f0-3ff8-11e8-a073-d74bcea9d08c\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"8\",\"gridData\":{\"x\":9,\"y\":0,\"w\":3,\"h\":2,\"i\":\"8\"},\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}},\"id\":\"5678d430-4403-11e8-b3ff-99767005d4b2\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"9\",\"gridData\":{\"x\":0,\"y\":30,\"w\":6,\"h\":4,\"i\":\"9\"},\"id\":\"7881ab10-4426-11e8-b3ff-99767005d4b2\",\"title\":\"User Profile Topics Cloud\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"10\",\"gridData\":{\"x\":0,\"y\":10,\"w\":6,\"h\":5,\"i\":\"10\"},\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"id\":\"465e47b0-4426-11e8-b3ff-99767005d4b2\",\"title\":\"User Profile Hashtags\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"11\",\"gridData\":{\"x\":0,\"y\":0,\"w\":3,\"h\":2,\"i\":\"11\"},\"id\":\"86a50f90-4410-11e8-b3ff-99767005d4b2\",\"title\":\"Total\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"12\",\"gridData\":{\"x\":3,\"y\":0,\"w\":6,\"h\":2,\"i\":\"12\"},\"id\":\"dd876bd0-4575-11e8-b3ff-99767005d4b2\",\"title\":\"Tweets per minute\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"13\",\"gridData\":{\"x\":6,\"y\":10,\"w\":6,\"h\":5,\"i\":\"13\"},\"id\":\"7e90b580-47ac-11e8-a032-27782ece9577\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"18\",\"gridData\":{\"x\":0,\"y\":2,\"w\":6,\"h\":4,\"i\":\"18\"},\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"id\":\"82f4e050-560d-11e8-b2c4-49257da705aa\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"19\",\"gridData\":{\"x\":0,\"y\":15,\"w\":12,\"h\":7,\"i\":\"19\"},\"embeddableConfig\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":5,\"direction\":\"desc\"}}}},\"id\":\"a406e120-8a93-11e8-b4d2-a3cbee09187e\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"20\",\"gridData\":{\"x\":0,\"y\":22,\"w\":6,\"h\":8,\"i\":\"20\"},\"id\":\"e56a35b0-8bb3-11e8-b4d2-a3cbee09187e\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"21\",\"gridData\":{\"x\":0,\"y\":34,\"w\":3,\"h\":3,\"i\":\"21\"},\"id\":\"cbe5b700-bd21-11e8-95c9-edf43a742e68\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"22\",\"gridData\":{\"x\":3,\"y\":34,\"w\":3,\"h\":3,\"i\":\"22\"},\"id\":\"b4bf64c0-c1ba-11e8-9542-3f34a944094b\",\"type\":\"visualization\",\"version\":\"6.2.3\"},{\"panelIndex\":\"23\",\"gridData\":{\"x\":6,\"y\":22,\"w\":6,\"h\":8,\"i\":\"23\"},\"version\":\"6.2.3\",\"type\":\"visualization\",\"id\":\"61272d70-c2a5-11e8-ad71-699da2fbdbdf\"}]",
+      "optionsJSON": "{\"darkTheme\":true,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]

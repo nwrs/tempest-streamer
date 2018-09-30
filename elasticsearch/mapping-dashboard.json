@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "e7bb5c40-c317-11e8-ad71-699da2fbdbdf",
+    "_type": "dashboard",
+    "_source": {
+      "title": "UK Region Mapping",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":12,\"h\":8,\"i\":\"1\"},\"version\":\"6.2.3\",\"type\":\"visualization\",\"id\":\"ba963370-c317-11e8-ad71-699da2fbdbdf\"}]",
+      "optionsJSON": "{\"darkTheme\":true,\"useMargins\":true,\"hidePanelTitles\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
