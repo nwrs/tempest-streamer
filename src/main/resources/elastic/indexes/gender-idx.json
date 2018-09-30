@@ -1,0 +1,15 @@
+{
+  "gender-timeline": {
+    "properties": {
+      "cnt": {
+        "type": "integer"
+      },
+      "gender": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}

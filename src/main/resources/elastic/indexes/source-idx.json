@@ -1,0 +1,18 @@
+{
+  "source-timeline": {
+    "properties": {
+      "cnt": {
+        "type": "integer"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "sourceUrl": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}

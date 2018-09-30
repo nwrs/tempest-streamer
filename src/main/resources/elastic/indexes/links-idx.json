@@ -1,0 +1,15 @@
+{
+  "links-timeline": {
+    "properties": {
+      "cnt": {
+        "type": "integer"
+      },
+      "linkUrl": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}

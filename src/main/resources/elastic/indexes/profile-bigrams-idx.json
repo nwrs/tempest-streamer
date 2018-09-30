@@ -1,0 +1,15 @@
+{
+  "profile-bigrams-timeline": {
+    "properties": {
+      "cnt": {
+        "type": "integer"
+      },
+      "word": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}

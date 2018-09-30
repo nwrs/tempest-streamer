@@ -1,0 +1,30 @@
+{
+  "retweets-timeline": {
+    "properties": {
+      "tweetId": {
+        "type": "long"
+      },
+      "numRetweets": {
+        "type": "long"
+      },
+      "screenName": {
+        "type": "keyword"
+      },
+      "accountName": {
+        "type": "keyword"
+      },
+      "imgUrl": {
+        "type": "keyword"
+      },
+      "tweetText": {
+        "type": "keyword"
+      },
+      "tweetLink": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "profile-topics-timeline": {
+    "properties": {
+      "cnt": {
+        "type": "integer"
+      },
+      "word": {
+        "type": "keyword"
+      },
+      "isHashtag": {
+        "type": "boolean"
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}

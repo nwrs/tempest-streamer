@@ -1,0 +1,36 @@
+{
+  "geo-timeline": {
+    "properties": {
+      "locationGeo": {
+        "type": "geo_point"
+      },
+      "location": {
+        "type": "keyword"
+      },
+      "country": {
+        "type": "keyword"
+      },
+      "region": {
+        "type": "keyword"
+      },
+      "area": {
+        "type": "keyword"
+      },
+      "town": {
+        "type": "keyword"
+      },
+      "accuracy": {
+        "type": "integer"
+      },
+      "iso31662": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      },
+      "count": {
+        "type": "integer"
+      }
+    }
+  }
+}

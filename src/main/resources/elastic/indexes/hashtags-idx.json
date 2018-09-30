@@ -1,0 +1,15 @@
+{
+  "hashtags-timeline": {
+    "properties": {
+      "cnt": {
+        "type": "integer"
+      },
+      "hashtag": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}

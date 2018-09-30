@@ -1,0 +1,35 @@
+Tempest Tweet Streamer (github.com/nwrs/tempest-streamer)
+
+Usage:
+
+    Stream options:
+        [--tweetSource kafka|direct] The source of the Tweets, either a direct Twitter direct connection or over Kafka. Defaults to direct.
+        [--timeWindow 30s|5m] Tumbling window size in seconds or minutes, e.g. 30s or 5m. Default 1m.
+        [--parallelism n] Flink stream parallelism. Default 1.
+
+    Search options, one of searchTerms or users is mandatory for direct connections.
+        [--searchTerms term1,term2...] Search terms.
+        [--users userId1,userId2...] Identifiers of users(s) to track.
+        [--languages code1,code2...] Languages of Tweets to stream, default is all languages.
+
+    Kafka options, mandatory when using a kafka connections:
+        [--kafkaServers server1:port,server2:port...] Kafka server(s). Defaults to localhost:9092.
+        [--kafkaTopic topic] Kafka topic for the Avro encoded tweets, defaults to 'tweets'.
+
+    Elasticsearch options:
+        [--elasticUrl http://host:port] Defaults to http://localhost:9200
+
+    Twitter credentials, mandatory for direct connections:
+        [--twitter-source.consumerKey xxxxxxxxx]
+        [--twitter-source.consumerSecret xxxxxxxxx]
+        [--twitter-source.token xxxxxxxxx]
+        [--twitter-source.tokenSecret xxxxxxxxx]
+
+    A java property format config file can be used instead of cmd-line args. Cmd-line args will override file based properties
+    on a per property basis:
+        [--configFile configFilePath]
+
+    More info:
+        Search terms: https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters
+        Language codes: https://developer.twitter.com/en/docs/developer-utilities/supported-languages/api-reference/get-help-languages.html
+        Credentials: Twitter developer account required to obtain security tokens/keys. https://developer.twitter.com/en/apply-for-access

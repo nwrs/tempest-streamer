@@ -1,0 +1,15 @@
+{
+  "count-timeline": {
+    "properties": {
+      "cnt": {
+        "type": "integer"
+      },
+      "tweetType": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}
