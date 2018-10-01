@@ -3,8 +3,10 @@
 Real-time Twitter analytic dashboards and mapping with Apache Flink, Elasticsearch and Kibana.
 
 ![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/kibana-screenshot.jpg)
+
 ![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/uk-mapping.jpg)
-![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/user-profiles.jpg)
+
+![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/us-states.jpg)
 
 ### Features
 
