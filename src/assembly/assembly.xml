@@ -1,0 +1,36 @@
+<assembly>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <fileSets>
+    <fileSet>
+        <directory>target</directory>
+        <outputDirectory>lib</outputDirectory>
+        <includes>
+            <include>*-packaged.jar</include>
+        </includes>
+    </fileSet>
+    <fileSet>
+        <directory>src/main/bin</directory>
+        <outputDirectory>.</outputDirectory>
+        <includes>
+            <include>*.sh</include>
+        </includes>
+        <fileMode>750</fileMode>
+    </fileSet>
+    <fileSet>
+        <directory>elasticsearch</directory>
+        <outputDirectory>elasticsearch</outputDirectory>
+        <includes>
+            <include>*.json</include>
+        </includes>
+    </fileSet>
+    <fileSet>
+        <directory>src/conf</directory>
+        <outputDirectory>conf</outputDirectory>
+        <includes>
+            <include>*</include>
+        </includes>
+    </fileSet>
+    </fileSets>
+</assembly>
