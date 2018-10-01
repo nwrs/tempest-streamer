@@ -23,7 +23,8 @@ Real-time Twitter analytic dashboards and mapping with Apache Flink, Elasticsear
 * Elasticsearch / Kibana 6.2.x
 * Flink 1.6.x (when running within a Flink cluster)
 * Kafka 10.1 (optional)
-* Twitter developer account
+* A Twitter developer account, register [here](https://developer.twitter.com/en/apply/user)
+* Register a Twitter app to acquire consumer keys/tokens [here](https://apps.twitter.com)
 
 
 ### Install and run from release
