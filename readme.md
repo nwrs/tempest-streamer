@@ -41,6 +41,7 @@ Create configuration file with search terms and Twitter credentials:
 
 ```
 $ cp conf/example.properies myConfig.properties
+$ vi myConfig.properties
 ```
 
 Example configuration file:
