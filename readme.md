@@ -31,7 +31,7 @@ Real-time Twitter analytic dashboards and mapping with Apache Flink, Elasticsear
 
 Install:
 
-``` bash
+```
 $ curl -L -O https://github.com/nwrs/tempest-streamer/releases/download/release-1.0/tempest-streamer-1.0.0.tar.gz
 $ tar -xvf tempest-streamer-1.0.0.tar.gz
 $ cd tempest-streamer-1.0.0
@@ -39,7 +39,7 @@ $ cd tempest-streamer-1.0.0
 
 Create configuration file with search terms and Twitter credentials:
 
-``` bash
+```
 $ cp conf/example.properies myConfig.properties
 ```
 
@@ -59,7 +59,7 @@ twitter-source.tokenSecret=YOUR_TOKEN_SECRET
 
 Run:
 
-```` bash
+````
 $ ./tempest-start.sh --configFile myConfig.properties
 
 2018-10-02 00:06:00 INFO  MainApp$:38 - Starting Tempest Tweet Streamer...
@@ -95,10 +95,10 @@ $ ./tempest-start.sh --configFile myConfig.properties
 
 ### Build
 
-``` bash
-git clone https://github.com/nwrs/tempest-streamer.git
-cd tempest-streamer
-mvn clean install
+```
+$ git clone https://github.com/nwrs/tempest-streamer.git
+$ cd tempest-streamer
+$ mvn clean install
 ```
 
 
