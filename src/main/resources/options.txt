@@ -1,3 +1,4 @@
+
 Tempest Tweet Streamer (github.com/nwrs/tempest-streamer)
 
 Usage:
@@ -25,7 +26,7 @@ Usage:
         [--twitter-source.token xxxxxxxxx]
         [--twitter-source.tokenSecret xxxxxxxxx]
 
-    A java property format config file can be used instead of cmd-line args. Cmd-line args will override file based properties
+    A java property (property=value) format config file can be used instead of cmd-line args. Cmd-line args will override file based properties
     on a per property basis:
         [--configFile configFilePath]
 
@@ -33,3 +34,4 @@ Usage:
         Search terms: https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters
         Language codes: https://developer.twitter.com/en/docs/developer-utilities/supported-languages/api-reference/get-help-languages.html
         Credentials: Twitter developer account required to obtain security tokens/keys. https://developer.twitter.com/en/apply-for-access
+
