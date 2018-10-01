@@ -2,13 +2,8 @@
 
 Real-time Twitter analytic dashboards and mapping with Apache Flink, Elasticsearch and Kibana.
 
-##### Real-time hashtag and tweet type/volume tracking
 ![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/kibana-screenshot.jpg)
-
-##### Real-time tweet mapping
 ![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/uk-mapping.jpg)
-
-##### User profiles
 ![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/user-profiles.jpg)
 
 ### Features
