@@ -92,6 +92,7 @@ $ ./tempest-start.sh --configFile myConfig.properties
 2018-10-02 00:06:08 INFO  ClientBase:240 - flink-twitter-source Processing connection data
 ````
 
+Follow instructions to configure Kibana [here](https://github.com/nwrs/tempest-streamer/wiki/Configuring-Kibana).
 
 
 ### Build
