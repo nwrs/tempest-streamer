@@ -47,10 +47,11 @@ $ vi myConfig.properties
 Example configuration file:
 ```
 # Configuration example for a direct connection to Twitter
-elasticUrl=http://localhost:9200
 tweetSource=direct
 searchTerms=barcelona,#fcb,#fcbarcelona,#CampNou
 languages=en
+#Elasticsearch URL, if using an AWS ES service the port will always be 443
+elasticUrl=http://localhost:9200
 # Add credentials here
 twitter-source.consumerKey=YOUR_KEY
 twitter-source.consumerSecret=YOUR_SECRET
