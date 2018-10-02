@@ -47,10 +47,11 @@ $ vi myConfig.properties
 Example configuration file:
 ```
 # Configuration example for a direct connection to Twitter
-elasticUrl=http://localhost:9200
 tweetSource=direct
 searchTerms=barcelona,#fcb,#fcbarcelona,#CampNou
 languages=en
+#Elasticsearch URL, if using an AWS ES service the port will always be 443
+elasticUrl=http://localhost:9200
 # Add credentials here
 twitter-source.consumerKey=YOUR_KEY
 twitter-source.consumerSecret=YOUR_SECRET
@@ -92,6 +93,7 @@ $ ./tempest-start.sh --configFile myConfig.properties
 2018-10-02 00:06:08 INFO  ClientBase:240 - flink-twitter-source Processing connection data
 ````
 
+Follow instructions to configure Kibana [here](https://github.com/nwrs/tempest-streamer/wiki/Configuring-Kibana).
 
 
 ### Build
