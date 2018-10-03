@@ -6,6 +6,7 @@ Real-time Twitter analytic dashboards and mapping with Apache Flink, Elasticsear
 
 ![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/uk-mapping.jpg)
 
+![Example Output](https://github.com/nwrs/tempest-streamer/blob/master/docs/images/screenshots/users.jpg)
 
 ### Features
 
