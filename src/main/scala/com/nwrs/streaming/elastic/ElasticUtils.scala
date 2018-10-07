@@ -111,8 +111,8 @@ object ElasticUtils {
     "retweets-idx",
     "influencers-idx")
 
-  def createSink[T <: JsonResult[_]](idx:String, mapping:String, props:Properties) = {
-    val httpHosts = props.getProperty("elasticUrl","http://localhost:9200").split(",").map(HttpHost.create(_)).toSeq
+  def createSink[T <: JsonResult[_]](idx:String, mapping:String, elasticUrl:String) = {
+    val httpHosts = elasticUrl.split(",").map(HttpHost.create(_)).toSeq
     val sinkFunc = new ElasticsearchSinkFunction[T] {
       override def process(cc: T, runtimeContext: RuntimeContext, requestIndexer: RequestIndexer): Unit = {
         requestIndexer.add(Requests.indexRequest()

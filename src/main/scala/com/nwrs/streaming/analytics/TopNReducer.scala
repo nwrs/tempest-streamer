@@ -1,11 +1,12 @@
-package com.nwrs.streaming.streaming
+package com.nwrs.streaming.analytics
 
 import java.util
-import com.nwrs.streaming.analytics.JsonResult
+
 import org.apache.flink.streaming.api.scala.function.ProcessAllWindowFunction
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 import org.apache.flink.util.Collector
-import collection.JavaConverters._
+
+import scala.collection.JavaConverters._
 
 /**
   * A simple collection that retains only the top n elements by natural sort order.

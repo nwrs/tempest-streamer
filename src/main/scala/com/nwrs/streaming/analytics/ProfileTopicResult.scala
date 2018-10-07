@@ -1,12 +1,11 @@
 package com.nwrs.streaming.analytics
 
-import java.util.Properties
 import com.nwrs.streaming.elastic.ElasticUtils
 import com.nwrs.streaming.parsing.Splitters
+import com.nwrs.streaming.streaming.TweetStreamProps
 import com.nwrs.streaming.twitter.Tweet
 import org.apache.flink.streaming.api.functions.sink.SinkFunction
 import org.apache.flink.streaming.api.scala.DataStream
-import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.scala._
 
 case class ProfileTopic(word:String, timestamp: Long, count:Int) extends JsonResult[ProfileTopic] {
@@ -25,21 +24,21 @@ case class ProfileTopic(word:String, timestamp: Long, count:Int) extends JsonRes
 }
 
 object ProfileTopicResult extends PipelineResult[ProfileTopic] {
-  override def addToStream(stream: DataStream[Tweet], sinkFunction: SinkFunction[ProfileTopic], windowTime:Time, parallelism:Int): Unit = {
+  override def addToStream(stream: DataStream[Tweet], sinkFunction: SinkFunction[ProfileTopic], props:TweetStreamProps): Unit = {
     stream
       .filter(t => !t.verified && t.profileText.length > 0)
       .flatMap(t => Splitters.toNormalisedWordsExCommonProfile(t.profileText).map(h => ProfileTopic(h, t.date, 1)))
-      .keyBy("word")
-      .timeWindow(windowTime)
+      .keyBy(_.key)
+      .timeWindow(props.windowTime)
       .reduce( _ + _)
       .filter(_.count > 1)
       .addSink(sinkFunction)
-      .setParallelism(parallelism)
+      .setParallelism(props.parallelism)
       .name(name)
   }
 
-  override def addToStream(stream: DataStream[Tweet], windowTime:Time, parallelism:Int)(implicit props:Properties): Unit = {
-    addToStream(stream, ElasticUtils.createSink[ProfileTopic]("profile-topics-idx","profile-topics-timeline", props), windowTime, parallelism:Int)
+  override def addToStream(stream: DataStream[Tweet], props:TweetStreamProps): Unit = {
+    addToStream(stream, ElasticUtils.createSink[ProfileTopic]("profile-topics-idx","profile-topics-timeline", props.elasticUrl), props)
   }
 
   override def name(): String = "ProfileTopics"

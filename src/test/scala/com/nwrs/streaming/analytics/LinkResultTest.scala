@@ -1,6 +1,7 @@
 package com.nwrs.streaming.analytics
 
 import com.nwrs.streaming.analytics.DataStreamImplicits._
+import com.nwrs.streaming.streaming.TweetStreamProps
 import com.nwrs.streaming.twitter.Tweet
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala._
@@ -28,7 +29,7 @@ class LinkResultTest extends FunSuite  {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.createLocalEnvironment(1)
     env.setStreamTimeCharacteristic(TimeCharacteristic.IngestionTime)
     val stream = env.fromCollection(tweets)
-    stream.addPipelineResult(LinkResult, ResultCollector.sinkFunction[CustomCount], Time.seconds(2), 1)
+    stream.addPipelineResult(LinkResult, ResultCollector.sinkFunction[CustomCount], TweetStreamProps(windowTime=Time.seconds(1), parallelism = 1))
     env.execute("LinkResultTest")
 
     Thread.sleep(1000) // doesn't seem to be a way to ensure results are ready, a sleep is really not ideal here!

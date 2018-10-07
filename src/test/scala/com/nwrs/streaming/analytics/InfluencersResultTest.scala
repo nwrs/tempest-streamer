@@ -1,6 +1,7 @@
 package com.nwrs.streaming.analytics
 
 import com.nwrs.streaming.analytics.DataStreamImplicits._
+import com.nwrs.streaming.streaming.TweetStreamProps
 import com.nwrs.streaming.twitter.Tweet
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala._
@@ -37,7 +38,7 @@ class InfluencersResultTest extends FunSuite  {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.createLocalEnvironment(1)
     env.setStreamTimeCharacteristic(TimeCharacteristic.IngestionTime)
     val stream = env.fromCollection(tweets)
-    stream.addPipelineResult(InfluencersResult, ResultCollector.sinkFunction[SimpleUser](), Time.seconds(1), 1)
+    stream.addPipelineResult(InfluencersResult, ResultCollector.sinkFunction[SimpleUser](), TweetStreamProps(windowTime=Time.seconds(1), parallelism = 1))
     env.execute("InfluencersResultTest test")
 
     // We are expecting to get the top 10 by number of followers counting each user only once

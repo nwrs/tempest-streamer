@@ -1,28 +1,26 @@
 package com.nwrs.streaming.analytics
 
-import java.util.Properties
-
 import com.nwrs.streaming.elastic.ElasticUtils
+import com.nwrs.streaming.streaming.TweetStreamProps
 import com.nwrs.streaming.twitter.Tweet
 import org.apache.flink.streaming.api.functions.sink.SinkFunction
 import org.apache.flink.streaming.api.scala.{DataStream, _}
-import org.apache.flink.streaming.api.windowing.time.Time
 
 object GenderResult extends PipelineResult[CustomCount] {
-  override def addToStream(stream: DataStream[Tweet], sinkFunction: SinkFunction[CustomCount], windowTime:Time, parallelism:Int): Unit = {
+  override def addToStream(stream: DataStream[Tweet], sinkFunction: SinkFunction[CustomCount], props:TweetStreamProps): Unit = {
     stream
       .filter(_.gender.nonEmpty)
       .map( t => CustomCount("gender",t.gender,t.date,1))
       .keyBy(_.key)
-      .timeWindow(windowTime)
+      .timeWindow(props.windowTime)
       .reduce( _ + _)
       .addSink(sinkFunction)
-      .setParallelism(parallelism)
+      .setParallelism(props.parallelism)
       .name(name)
   }
 
-  override def addToStream(stream: DataStream[Tweet], windowTime:Time, parallelism:Int) (implicit props:Properties): Unit = {
-    addToStream(stream, ElasticUtils.createSink[CustomCount]("gender-idx","gender-timeline", props), windowTime, parallelism)
+  override def addToStream(stream: DataStream[Tweet], props:TweetStreamProps): Unit = {
+    addToStream(stream, ElasticUtils.createSink[CustomCount]("gender-idx","gender-timeline", props.elasticUrl), props)
   }
 
   override def name(): String = "Gender"

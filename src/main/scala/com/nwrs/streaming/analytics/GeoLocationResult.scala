@@ -3,6 +3,7 @@ package com.nwrs.streaming.analytics
 import java.util.Properties
 
 import com.nwrs.streaming.elastic.ElasticUtils
+import com.nwrs.streaming.streaming.TweetStreamProps
 import com.nwrs.streaming.twitter.Tweet
 import org.apache.flink.streaming.api.functions.sink.SinkFunction
 import org.apache.flink.streaming.api.scala.DataStream
@@ -25,7 +26,7 @@ case class GeoLocationJson(location:String,
 }
 
 object GeoLocationResult extends PipelineResult[GeoLocationJson] {
-  override def addToStream(stream: DataStream[Tweet], sinkFunction: SinkFunction[GeoLocationJson], windowTime:Time, parallelism:Int): Unit = {
+  override def addToStream(stream: DataStream[Tweet], sinkFunction: SinkFunction[GeoLocationJson], props:TweetStreamProps): Unit = {
     stream
       .filter( t => t.locationAccuracy > 0)
       .map( t => GeoLocationJson(t.resolvedProfileLocation,
@@ -38,15 +39,15 @@ object GeoLocationResult extends PipelineResult[GeoLocationJson] {
             t.iso31662,
             t.date, 1))
       .keyBy(_.key)
-      .timeWindow(windowTime)
+      .timeWindow(props.windowTime)
       .reduce( _ + _)
       .addSink(sinkFunction)
-      .setParallelism(parallelism)
+      .setParallelism(props.parallelism)
       .name(name)
   }
 
-  override def addToStream(stream: DataStream[Tweet], windowTime:Time, parallelism:Int) (implicit props:Properties): Unit = {
-    addToStream(stream, ElasticUtils.createSink[GeoLocationJson]("geo-idx", "geo-timeline", props), windowTime, parallelism)
+  override def addToStream(stream: DataStream[Tweet], props:TweetStreamProps): Unit = {
+    addToStream(stream, ElasticUtils.createSink[GeoLocationJson]("geo-idx", "geo-timeline", props.elasticUrl), props)
   }
 
   override def name(): String = "GeoLocation"

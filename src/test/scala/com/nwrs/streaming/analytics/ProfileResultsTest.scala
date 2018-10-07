@@ -8,6 +8,7 @@ import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
 import com.nwrs.streaming.analytics.DataStreamImplicits._
+import com.nwrs.streaming.streaming.TweetStreamProps
 
 @RunWith(classOf[JUnitRunner])
 class ProfileResultsTest extends FunSuite  {
@@ -25,7 +26,7 @@ class ProfileResultsTest extends FunSuite  {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.createLocalEnvironment(1)
     env.setStreamTimeCharacteristic(TimeCharacteristic.IngestionTime)
     val stream = env.fromCollection(tweets)
-    stream.addPipelineResult(ProfileTopicResult, ResultCollector.sinkFunction[ProfileTopic], Time.seconds(2), 1)
+    stream.addPipelineResult(ProfileTopicResult, ResultCollector.sinkFunction[ProfileTopic], TweetStreamProps(windowTime=Time.seconds(2), parallelism = 1))
     env.execute("ProfileTopicResult test")
 
     println(ResultCollector.results)
@@ -40,7 +41,7 @@ class ProfileResultsTest extends FunSuite  {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.createLocalEnvironment(1)
     env.setStreamTimeCharacteristic(TimeCharacteristic.IngestionTime)
     val stream = env.fromCollection(tweets)
-    stream.addPipelineResult(ProfileBigramsResult, ResultCollector.sinkFunction[CustomCount], Time.seconds(2), 1)
+    stream.addPipelineResult(ProfileBigramsResult, ResultCollector.sinkFunction[CustomCount], TweetStreamProps(windowTime=Time.seconds(2), parallelism = 1))
     env.execute("ProfileBigramsResult test")
 
     assert(ResultCollector.size==2)
